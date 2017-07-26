@@ -1,0 +1,7 @@
+AddHandler php56-script .php
+suPHP_ConfigPath /home/assessment1@ftp.assessment1.hospedagemdesites.ws/public_html/
+
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
