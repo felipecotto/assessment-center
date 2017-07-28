@@ -23,7 +23,6 @@
                     <li><a href="{{ route('usuario.index') }}">Usuários</a></li>
                     <li><a href="{{ url('admin/criar-documento') }}">Novo Documento</a></li>
                     <li><a href="{{ url('admin/lista-documento') }}">Listar Documentos</a></li>
-                    <li><a href="{{ url('admin/respostas') }}">Respostas</a></li>
                 @endif
             </ul>
 

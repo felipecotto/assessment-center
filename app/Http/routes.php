@@ -50,6 +50,9 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin' ], function () {
     Route::get('deletar-documento/{id}','PostController@destroy');
 
     Route::get('respostas', 'ResultsController@index');
+    Route::get('verresultados/{id}', 'ResultsController@verresultado');
+
+    // $route['verresultados_ids'] = 'home/verresultados_ids';
     
     Route::get('register',function () {
            return view('welcome');

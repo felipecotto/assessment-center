@@ -22,6 +22,7 @@
                         <th class="text-center">
                             <a href="{!! url('visualizar-documento/'.$value->id) !!}" class="btn btn-success" role="button">Visualizar</a>
                             <a href="{!! url('admin/editar-documento/'.$value->id) !!}" class="btn btn-primary" role="button">Editar</a>
+                            <a href="{{ url('admin/respostas') }}" class="btn btn-warning" role="button">Respostas</a>
                             <a href="{!! url('admin/deletar-documento/'.$value->id) !!}" class="btn btn-danger" role="button"  onclick="return confirm('Deseja realmente deletar o registro? ')">Deletar</a>
                         </th>
                     </tr>
