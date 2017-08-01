@@ -25,7 +25,6 @@ class PostController extends Controller
         return view('post.index-post')->with('posts', $posts); 
     }
 
-
     public function create() {
         return view('post.creat-post');
     }

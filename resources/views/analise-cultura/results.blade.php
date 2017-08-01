@@ -2,12 +2,12 @@
 
 @section('content')
 
-<div class="container">
+<div class="container m-b-30">
     <form method="post">
     	<div class="row">
             <h1>Respostas dos participantes</h1>
             <div class="col-lg-12">
-                <table width="100%" id="dtRespostas" class="table table-responsive table-hover">
+                <table width="100%" id="table_results" class="table table-responsive table-hover">
                     <thead>
                     <tr  style="font-weight:bold;">
                         <td id="1">Id</td>
@@ -26,9 +26,9 @@
 						<td>{{ $value->class }}</td>
 						<td>{{ $value->email }}</td>
 						<td>
-							<a href="#" data-toggle="modal" data-id="{{ $value->id }}" data-title="{{ $value->full_name}}" data-target="#modalResultado" class="ver">Ver resultado</a>
+							<a href="{{ url('admin/verresultados/'.$value->id) }}"  class="ver">Ver resultado</a>
 						</td>
-						<td align="left">{{ $value->created_at }}</td>
+						<td>{{ $value->created_at }}</td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -38,30 +38,29 @@
 	</form>
 </div>
 <div class="container">
-	<div class="row">
-        <div class="col-lg-10 text-center" style="background-color:#fff">
-            <h2>Visão geral</h2>
-            <div class="row">
-                <div class="col-lg-12 col-md-12" id="content_pontuacao" style="padding:2em 1em;">
-                    <div class="row">
-                        <div class="col-lg-7 col-md-7">
-                            <div id="content_table"></div>
-                        </div>
-                        <div class="col-lg-5 col-md-5">
-                            <canvas id="content_canvas"></canvas>
-                        </div>
-                    </div>
-                    <p>
-                    <button class="btn btn-primary" id="gerar">Gerar resultado</button>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-1 text-center"></div>
-    </div> 
+	<div class="jumbotron">
+		<div class="row">
+	        <div class="col-md-12 text-center">
+	            <h2>Visão geral</h2>
+	            <div class="row">
+	                <div class="col-lg-12 col-md-12" id="content_pontuacao" style="padding:2em 1em;">
+	                    <div class="row">
+	                        <div class="col-lg-7 col-md-7">
+	                            <div id="content_table"></div>
+	                        </div>
+	                        <div class="col-lg-5 col-md-5">
+	                            <canvas id="content_canvas"></canvas>
+	                        </div>
+	                    </div>
+	                    <p>
+	                    <button class="btn btn-primary" id="gerar">Gerar resultado</button>
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	    </div> 
+	</div>
 </div>
-
-    <br/><br><br>
 
 <div class="modal fade" id="modalResultado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -94,73 +93,24 @@
 
 @section('scripts')
 
+
+
 <script>
 	$(document).ready(function() {
-
-		var table = $('#dtRespostas').DataTable(
-		{
-
-			"columns": [
-			{ "visible": false },
-			null,
-			null,
-			null,
-			null,
-			null
-			]  ,
-			language: {
-				"decimal":        "",
-				"emptyTable":     "Nenhum registro encontrado",
-				"info":           "Mostrando _START_ a _END_ de _TOTAL_ registros",
-				"infoEmpty":      "Mostrando 0 de 0 de 0 registros",
-				"infoFiltered":   "(de um total de _MAX_ registros)",
-				"infoPostFix":    "",
-				"thousands":      ",",
-				"lengthMenu":     "Mostrando _MENU_ registros",
-				"loadingRecords": "Carregando...",
-				"processing":     "Processando...",
-				"search":         "Procurar:",
-				"zeroRecords":    "Nenhum registro encontrado",
-				"paginate": {
-					"first":      "Primeiro",
-					"last":       "Último",
-					"next":       "Próximo",
-					"previous":   "Anterior"
-				},
-				"aria": {
-					"sortAscending":  ": activate to sort column ascending",
-					"sortDescending": ": activate to sort column descending"
-				}
-			}}
-			);
-		$('.dataTables_filter input', table.table().container())
-		.off('.DT')
-		.on('keyup.DT cut.DT paste.DT input.DT search.DT', function(e) {          
-			var term = $.trim(this.value);
-			if (term !== ""){
-				var termRegExp = new RegExp('^' + $.fn.dataTable.util.escapeRegex(term) + '$', 'i');
-
-				$.fn.dataTable.ext.search.push(
-					function (settings, data, dataIndex){
-						var isFound = false;
-						$.each(data, function (index, value) {
-							if (termRegExp.test(value)){ isFound = true; }
-							return !isFound;
-						});        
-						return isFound;
-					}
-					);
-			}
-
-			table.draw();
-
-			if (term !== "") {
-				$.fn.dataTable.ext.search.pop();
-			}
-		});
-
-
+		
+	    $('#table_results').DataTable({
+	    	"language": {
+	            "lengthMenu": "Mostrando _MENU_ records por página",
+	            "zeroRecords": "Nada encontrado",
+	            "info": "Monstrando _PAGE_ of _PAGES_",
+	            "infoEmpty": "Não há registros",
+	            "infoFiltered": "(filtered from _MAX_ total records)",
+	            "search": "Procurar:"
+	        }
+	    });
+		
 		$('#gerar').on('click',function(){
+
 			var ids = Array();
 
 			table.rows({filter: 'applied'}).every( function ( rowIdx, tableLoop, rowLoop ) {
@@ -172,8 +122,9 @@
 			$.ajax({
 				type: 'POST',
 				data:{ids:ids},
-				url: '{{ url('verresultados/{id}') }}', 
+				url: '{{ url('admin/verresultados_ids') }}', 
 				success: function (data) {
+					
 					data = JSON.parse(data);
 
 					$('#content_table').html(data.html);

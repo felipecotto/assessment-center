@@ -20,6 +20,7 @@ Route::get('analise','AnaliseCulturaController@index');
 Route::post('nova-analise', 'AnaliseCulturaController@create');
 Route::post('nova-analise', 'AnaliseCulturaController@store');
 
+
 Route::post('validar-user', 'ViewController@attemptLogin');
 
 Route::get('/finalizada', function(){
@@ -51,6 +52,16 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin' ], function () {
 
     Route::get('respostas', 'ResultsController@index');
     Route::get('verresultados/{id}', 'ResultsController@verresultado');
+    Route::get('verresultados_ids', 'ResultsController@verresultados_ids'); 
+    Route::post('verresultados_ids', 'ResultsController@verresultados_ids'); 
+    
+    Route::get('criar-turma',function () {
+           return view('turma.create');
+    });
+    Route::get('turma', 'TurmaController@index'); 
+    Route::post('criar-turma', 'TurmaController@create');
+    Route::post('criar-turma', 'TurmaController@store');
+    Route::get('deletar-turma/{id}','TurmaController@destroy');
 
     // $route['verresultados_ids'] = 'home/verresultados_ids';
     

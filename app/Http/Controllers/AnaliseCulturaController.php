@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Response;
+use App\Turma;
 use Redirect;
 use App\Http\Requests; 
 use App\Http\Controllers\Controller;
@@ -16,7 +17,8 @@ class AnaliseCulturaController extends Controller
 {
     public function index()
     {
-        return view('analise-cultura.create'); 
+        $turmas = turma::all();
+        return view('analise-cultura.create')->with('turmas', $turmas); 
     }
 
     public function create() {
@@ -78,6 +80,10 @@ class AnaliseCulturaController extends Controller
         $response->{'6_D_2'} = Input::get('6_D_2');
         $response->save();
         return redirect('finalizada');
+    }
+
+    public function edit() {
+        return view('analise-cultura.edit');
     }
 
 

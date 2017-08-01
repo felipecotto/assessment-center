@@ -10,6 +10,11 @@ class CreateResponsesTable extends Migration
      *
      * @return void
      */
+
+    public function turmas(){
+        return $this->belongsToMany(Turma::class);
+    }
+
     public function up()
     {
         Schema::create('responses', function (Blueprint $table) {

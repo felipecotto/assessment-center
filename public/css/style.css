@@ -128,3 +128,15 @@
     display: none;
 }
 
+
+.page-finish {
+    display: table;
+    width: 100%;
+    height: calc(100vh - 71px);
+}
+
+.page-finish-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+

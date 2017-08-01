@@ -14,6 +14,11 @@ use Validator;
 
 class ResultsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
 		$response = response::all();
@@ -55,19 +60,43 @@ class ResultsController extends Controller
 
         public function verresultados_ids()
         {
-            $ids = $this->input->post('ids');
-            $data = $this->m_respostas->by_ids($ids);
+            $datas = response::all();
 
-            $atual_a = (int) $data[0]['1_A_1']+$data[0]['2_A_1']+$data[0]['3_A_1']+$data[0]['4_A_1']+$data[0]['5_A_1']+$data[0]['6_A_1'];
-            $atual_b = (int) $data[0]['1_B_1']+$data[0]['2_B_1']+$data[0]['3_B_1']+$data[0]['4_B_1']+$data[0]['5_B_1']+$data[0]['6_B_1'];
-            $atual_c = (int) $data[0]['1_C_1']+$data[0]['2_C_1']+$data[0]['3_C_1']+$data[0]['4_C_1']+$data[0]['5_C_1']+$data[0]['6_C_1'];
-            $atual_d = (int) $data[0]['1_D_1']+$data[0]['2_D_1']+$data[0]['3_D_1']+$data[0]['4_D_1']+$data[0]['5_D_1']+$data[0]['6_D_1'];
-        
-            $preferida_a = (int) $data[0]['1_A_2']+$data[0]['2_A_2']+$data[0]['3_A_2']+$data[0]['4_A_2']+$data[0]['5_A_2']+$data[0]['6_A_2'];
-            $preferida_b = (int) $data[0]['1_B_2']+$data[0]['2_B_2']+$data[0]['3_B_2']+$data[0]['4_B_2']+$data[0]['5_B_2']+$data[0]['6_B_2'];
-            $preferida_c = (int) $data[0]['1_C_2']+$data[0]['2_C_2']+$data[0]['3_C_2']+$data[0]['4_C_2']+$data[0]['5_C_2']+$data[0]['6_C_2'];
-            $preferida_d = (int) $data[0]['1_D_2']+$data[0]['2_D_2']+$data[0]['3_D_2']+$data[0]['4_D_2']+$data[0]['5_D_2']+$data[0]['6_D_2'];
-     
+            foreach ($datas as $key => $data) {
+               
+
+
+                dd($data->{'1_A_1'});
+
+
+
+            }
+
+
+            $atual_a = $data->{'1_A_1'} + $data->{'2_A_1'} + $data->{'3_A_1'} + $data->{'4_A_1'} +
+            $data->{'5_A_1'} + $data->{'6_A_1'};  
+
+            $atual_b = $data->{'1_B_1'} + $data->{'2_B_1'} + $data->{'3_B_1'} + $data->{'4_B_1'} +
+            $data->{'5_B_1'} + $data->{'6_B_1'};
+
+            $atual_c = $data->{'1_C_1'} + $data->{'2_C_1'} + $data->{'3_C_1'} + $data->{'4_C_1'} +
+            $data->{'5_C_1'} + $data->{'6_C_1'};
+
+            $atual_d = $data->{'1_D_1'} + $data->{'2_D_1'} + $data->{'3_D_1'} + $data->{'4_D_1'} +
+            $data->{'5_D_1'} + $data->{'6_D_1'};
+
+            $preferida_a = $data->{'1_A_2'} + $data->{'2_A_2'} + $data->{'3_A_2'} + $data->{'4_A_2'} +
+            $data->{'5_A_2'} + $data->{'6_A_2'};  
+
+            $preferida_b = $data->{'1_B_2'} + $data->{'2_B_2'} + $data->{'3_B_2'} + $data->{'4_B_2'} +
+            $data->{'5_B_2'} + $data->{'6_B_2'};
+
+            $preferida_c = $data->{'1_C_2'} + $data->{'2_C_2'} + $data->{'3_C_2'} + $data->{'4_C_2'} +
+            $data->{'5_C_2'} + $data->{'6_C_2'};
+
+            $preferida_d = $data->{'1_D_2'} + $data->{'2_D_2'} + $data->{'3_D_2'} + $data->{'4_D_2'} +
+            $data->{'5_D_2'} + $data->{'6_D_2'};
+
 
              $html = ' 
                 <div class="row">
@@ -105,10 +134,21 @@ class ResultsController extends Controller
                     </table>
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
-                </div>';
+                </div>'; 
 
-                    echo json_encode(array('html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
-                        'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)));
+            // return ['html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
+            //             'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)];
+
+                return response()->json(array('html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
+                    'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)));
+
+
+            
+            
+
+
+                    // echo json_encode(array('html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
+                    //     'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)));
         }
 
         public function geraPDF(){

@@ -45,7 +45,7 @@ class UserController extends Controller
         $usuario->name = $request->name; 
         $usuario->email = $request->email; 
         $usuario->password = bcrypt($request->password); 
-        $usuario->remember_token = bcrypt($request->remember_token); 
+        // $usuario->remember_token = bcrypt($request->remember_token); 
         $usuario->save(); 
         return redirect()->route('usuario.index')->with('success', 'Editado com sucesso!');
     }

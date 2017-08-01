@@ -16,7 +16,7 @@
                     @foreach($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
-            </ul>
+                </ul>
             @endif
 
             <form name="frm" action="{{ route("usuario.store")}}" method="post" id="form_newuser">

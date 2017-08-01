@@ -29,7 +29,7 @@
             </ul>
             @endif
 
-            <form name="frm" action="{{ route("usuario.update", ["id"=> $usuario->id ])}}" method="POST" >
+            <form name="frm" action="{{ route("usuario.update", ["id"=> $usuario->id ])}}" method="POST" id="form_edituser">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 {{-- {{ csrf_field() }} --}}
                 {{ method_field(is_null($usuario->id) ? 'POST' : 'PUT') }}
@@ -63,7 +63,7 @@
                     <label for="password" class="col-sm-2 control-label">Senha:</label>
 
                     <div class="col-sm-10">
-                        <input name="password" type="password" value="" class="form-control" />
+                        <input name="password" type="password" value="" class="form-control" id="password" />
                     </div>
 
                 </div>
@@ -75,7 +75,7 @@
                     <label for="passwordc" class="col-sm-2 control-label">Confirme a senha:</label>
 
                     <div class="col-sm-10">
-                        <input name="remember_token" type="password" value="" class="form-control" />
+                        <input name="password_confirmation" type="password" id="password_confirmation" value="" class="form-control" />
                     </div>
 
                 </div>
@@ -101,4 +101,46 @@
         </div>
 
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(function(){
+            $("#form_edituser").validate({
+                rules : {
+                    name:{
+                        required:true,
+                        minlength:3
+                    },
+                    email:{
+                        required:true
+                    },
+                    password:{
+                        required:true
+                    },
+                    password_confirmation:{
+                        required:true,
+                        equalTo: "#password"
+                    },
+
+                },
+                messages:{
+                    name:{
+                        required:"Por favor, informe seu nome",
+                        minlength:"O nome deve ter pelo menos 3 caracteres"
+                    },
+                    email:{
+                        required:"É necessário informar um email"
+                    },
+                    password:{
+                        required:"A senha é obrigatória"
+                    },
+                    password_confirmation:{
+                        required:"Por favor confirme a senha",
+                        equalTo: "O campo confirmação de senha deve ser identico ao campo senha."
+                        }      
+                   }
+            });
+        });
+    </script>
 @endsection
