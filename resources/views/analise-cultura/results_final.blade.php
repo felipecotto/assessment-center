@@ -26,23 +26,23 @@
                         </tr>
                         <tr>
                              <td>A (Clã)</td>
-                             <td class="text-center">{{ ($atual_a/6) }} %</td>
-                             <td class="text-center">{{ ($preferida_a/6) }} %</td>
+                             <td class="text-center">{{ round($atual_a/6) }} %</td>
+                             <td class="text-center">{{ round($preferida_a/6) }} %</td>
                         </tr>
                         <tr>
                              <td>B (Adocracia)</td>
-                             <td class="text-center">{{ ($atual_b/6) }} %</td>
-                             <td class="text-center">{{ ($preferida_b/6) }} %</td>
+                             <td class="text-center">{{ round($atual_b/6) }} %</td>
+                             <td class="text-center">{{ round($preferida_b/6) }} %</td>
                         </tr>
                         <tr>
                              <td>C (Mercado)</td>
-                             <td class="text-center">{{ ($atual_c/6) }} %</td>
-                             <td class="text-center">{{ ($preferida_c/6) }} %</td>
+                             <td class="text-center">{{ round($atual_c/6) }} %</td>
+                             <td class="text-center">{{ round($preferida_c/6) }} %</td>
                         </tr>
                         <tr>
                              <td>D (Hierárquica)</td>
-                             <td class="text-center">{{ ($atual_d/6) }} %</td>
-                             <td class="text-center">{{ ($preferida_d/6) }} %</td>
+                             <td class="text-center">{{ round($atual_d/6) }} %</td>
+                             <td class="text-center">{{ round($preferida_d/6) }} %</td>
                         </tr>
                     </table>
                 </div>

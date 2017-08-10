@@ -28,7 +28,7 @@ class ResultsController extends Controller
     	public function verresultado($id)
     	{
     		$response = response::find($id); 
-    		
+
     		$atual_a = $response->{'1_A_1'} + $response->{'2_A_1'} + $response->{'3_A_1'} + $response->{'4_A_1'} +
     		$response->{'5_A_1'} + $response->{'6_A_1'};  
 
@@ -60,18 +60,9 @@ class ResultsController extends Controller
 
         public function verresultados_ids()
         {
-            $datas = response::all();
-
-            foreach ($datas as $key => $data) {
-               
-
-
-                dd($data->{'1_A_1'});
-
-
-
-            }
-
+            
+            $ids = 'ids';
+            $data = $this->response->by_ids($ids);
 
             $atual_a = $data->{'1_A_1'} + $data->{'2_A_1'} + $data->{'3_A_1'} + $data->{'4_A_1'} +
             $data->{'5_A_1'} + $data->{'6_A_1'};  
@@ -99,56 +90,45 @@ class ResultsController extends Controller
 
 
              $html = ' 
-                <div class="row">
-                <div class="col-lg-2 col-md-2"></div>
-                <div class="col-lg-8 col-md-8">
-                    <h3>Pontuação</h3>
-                    <table width="100%" class="table">
-                        <tr style="font-weight:bold;">
-                             <td width="40%" align="left">Dimensão</td>
-                             <td width="25%" align="center">Atual</td>
-                             <td width="25%" align="center">Preferida</td>
-                        </tr>
-                        <tr>
-                             <td width="10%" align="left">A (Clã)</td>
-                             <td width="10%" align="center">'.round($atual_a/6).'%</td>
-                             <td width="10%" align="center">'.round($preferida_a/6).'%</td>
-                        </tr>
-                        <tr>
-                             <td width="10%" align="left">B (Adocracia)</td>
-                             <td width="10%" align="center">'.round($atual_b/6).'%</td>
-                             <td width="10%" align="center">'.round($preferida_b/6).'%</td>
+            <div class="row">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-8 col-md-8">
+                <h3>Pontuação</h3>
+                <table width="100%" class="table">
+                    <tr style="font-weight:bold;">
+                         <td width="40%" align="left">Dimensão</td>
+                         <td width="25%" align="center">Atual</td>
+                         <td width="25%" align="center">Preferida</td>
+                    </tr>
+                    <tr>
+                         <td width="10%" align="left">A (Clã)</td>
+                         <td width="10%" align="center">'.round($atual_a/6).'%</td>
+                         <td width="10%" align="center">'.round($preferida_a/6).'%</td>
+                    </tr>
+                    <tr>
+                         <td width="10%" align="left">B (Adocracia)</td>
+                         <td width="10%" align="center">'.round($atual_b/6).'%</td>
+                         <td width="10%" align="center">'.round($preferida_b/6).'%</td>
 
-                        </tr>
-                        <tr>
-                             <td width="10%" align="left">C (Mercado)</td>
-                             <td width="10%" align="center">'.round($atual_c/6).'%</td>
-                             <td width="10%" align="center">'.round($preferida_c/6).'%</td>
-                        </tr>
-                        <tr>
-                             <td width="10%" align="left">D (Hierárquica)</td>
-                             <td width="10%" align="center">'.round($atual_d/6).'%</td>
-                             <td width="10%" align="center">'.round($preferida_d/6).'%</td>
-                        </tr>
-                       
-                    </table>
-                </div>
-                <div class="col-lg-2 col-md-2"></div>
-                </div>'; 
+                    </tr>
+                    <tr>
+                         <td width="10%" align="left">C (Mercado)</td>
+                         <td width="10%" align="center">'.round($atual_c/6).'%</td>
+                         <td width="10%" align="center">'.round($preferida_c/6).'%</td>
+                    </tr>
+                    <tr>
+                         <td width="10%" align="left">D (Hierárquica)</td>
+                         <td width="10%" align="center">'.round($atual_d/6).'%</td>
+                         <td width="10%" align="center">'.round($preferida_d/6).'%</td>
+                    </tr>
+                   
+                </table>
+            </div>
+            <div class="col-lg-2 col-md-2"></div>
+            </div>';
 
-            // return ['html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
-            //             'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)];
-
-                return response()->json(array('html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
+                echo json_encode(array('html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
                     'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)));
-
-
-            
-            
-
-
-                    // echo json_encode(array('html'=>$html,'atual'=>round($atual_a/6).",".round($atual_b/6).",".round($atual_c/6).",".round($atual_d/6),
-                    //     'preferida'=>round($preferida_a/6).",".round($preferida_b/6).",".round($preferida_c/6).",".round($preferida_d/6)));
         }
 
         public function geraPDF(){

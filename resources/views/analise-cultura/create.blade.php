@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <label>Seu email</label>
-                        <input type="text" class="form-control" data-msg="Informe o seu email" id="email" required name="email"/>
+                        <input type="email" class="form-control" data-msg="Informe o seu email" id="email" required name="email"/>
                     </div>
                 </div>
                 <div class="row">
@@ -47,40 +47,40 @@
                              <td width="10%">A</td>
                              <td width="70%" align="left">A organização valoriza as relações pessoais. É como uma extensão da família. As pessoas tendem a expressar-se de forma aberta e franca.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_1" name="1_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_1" name="1_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">B</td>
                              <td width="70%" align="left">A organização é um ambiente dinâmico e empreendedor. As pessoas tendem a se expor e assumir riscos.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_1" name="1_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_1" name="1_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">C</td>
                              <td width="70%" align="left">A organização é fortemente orientada a resultados. O foco principal é atingir os objetivos e metas. As pessoas são muito competitivas e orientadas para resultados concretos. </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_1" name="1_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_1" name="1_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">D</td>
                              <td width="70%" align="left">A organização é muito formal, estruturada e hierárquica, na qual o controle prevalece. Normas, regras e procedimentos moldam e definem como as pessoas agem.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_1" name="1_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_1" name="1_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_1" name="1_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                          <tr>
@@ -104,40 +104,40 @@
                              <td width="10%">A</td>
                              <td width="70%" align="left">A liderança na organização é geralmente orientada para o mentoring, que incentiva relações francas e abertas e molda um ambiente acolhedor.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">B</td>
                              <td width="70%" align="left">A liderança na organização é geralmente considerada um exemplo de empreendedorismo, inovação e assunção de riscos.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">C</td>
                              <td width="70%" align="left">A liderança na organização geralmente tem muito baixa tolerância para novas ideias, agressiva e com estreito foco nos resultados.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">D</td>
                              <td width="70%" align="left">A liderança na organização é geralmente considerada pela exemplar coordenação, organização e/ou foco e habilidade em gerar eficiência.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_2" name="2_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_2" name="2_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                          <tr>
@@ -162,40 +162,40 @@
                              <td width="10%">A</td>
                              <td width="70%" align="left">O estilo de gestão da organização é caracterizado pelo trabalho em equipe, construção de consenso e participação.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">B</td>
                              <td width="70%" align="left">O estilo de gestão é caracterizado pela personalização, tomada de riscos individuais, inovação, liberdade de ação e singularidade.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">C</td>
                              <td width="70%" align="left">O estilo de gestão é caracterizado pela forte competição entre indivíduos e grupos, muita pressão e foco em resultados.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">D</td>
                              <td width="70%" align="left">O estilo de gestão é caracterizado pelo senso de segurança dos colaboradores, conformidade, em um ambiente previsível e com relações estáveis.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_3" name="3_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_3" name="3_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                          <tr>
@@ -220,40 +220,40 @@
                              <td width="10%">A</td>
                              <td width="70%" align="left">Os valores que prevalecem na organização são a lealdade e a confiança mútua. O alto compromisso com a empresa é resultado destes valores positivos.</td>
                              <td width="10%"> 
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_4" name="4_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_4" name="4_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">B</td>
                              <td width="70%" align="left">Os valores que prevalecem na organização é o compromisso com a inovação e com o desenvolvimento. Há uma importante ênfase no futuro e estar sempre buscando novas fronteiras.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_4" name="4_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_4" name="4_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">C</td>
                              <td width="70%" align="left">Os valores que prevalecem na organização são a enorme ênfase no atingimento de objetivos e metas. Agressividade, competitividade e vencer sempre são lugar comum.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_4" name="4_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_4" name="4_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">D</td>
                              <td width="70%" align="left">Os valores que prevalecem na organização são as políticas, regras, normas e procedimentos formais. Manter o bom funcionamento e um baixo nível de conflitos é importante.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_4" name="4_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_4" name="4_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_4" name="4_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                          <tr>
@@ -278,40 +278,40 @@
                              <td width="10%">A</td>
                              <td width="70%" align="left">A organização enfatiza o desenvolvimento humano. Confiança, abertura e participação são as tônicas das relações.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_5" name="5_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_5" name="5_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_5" name="5_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_5" name="5_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">B</td>
                              <td width="70%" align="left">A organização enfatiza a aquisição de novos recursos e a criação de novos desafios. Buscar novas perspectivas e oportunidades é um comportamento valorizado e incentivado.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_5" name="5_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_5" name="5_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_5" name="5_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_5" name="5_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">C</td>
                              <td width="70%" align="left">A organização enfatiza a competitividade e o atingimento de resultados. Superar metas, fazer mais do que o esperado e vencer no mercado, são focos preponderantes.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_5" name="5_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_5" name="5_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_5" name="5_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_5" name="5_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">D</td>
                              <td width="70%" align="left">A organização enfatiza o ambiente estável, a permanência das pessoas e a estabilidade. Eficiência, controle e pleno funcionamento operacional são importantes.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_5" name="5_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_5" name="5_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_5" name="5_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_5" name="5_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                          <tr>
@@ -336,40 +336,40 @@
                              <td width="10%">A</td>
                              <td width="70%" align="left">A organização define sucesso como a capacidade de desenvolver as pessoas, trabalho em equipe, compromisso e dedicação dos colaboradores e preocupação genuína com as pessoas.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_6" name="6_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_6" name="6_A_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_6" name="6_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_6" name="6_A_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">B</td>
                              <td width="70%" align="left">A organização define sucesso como a partir da inovação e do orgulho de ter os mais novos e avançados produtos, serviços e soluções para o cliente. Esta empresa é líder em inovação.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_6" name="6_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_6" name="6_B_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_6" name="6_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_6" name="6_B_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">C</td>
                              <td width="70%" align="left">A organização define sucesso como aquele que vence no mercado e supera seus concorrentes. Liderança competitiva no mercado é chave.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_6" name="6_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control atual atual_6" name="6_C_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_6" name="6_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório" required class="form-control preferida preferida_6" name="6_C_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                         <tr>
                              <td width="10%">D</td>
                              <td width="70%" align="left">A organização define sucesso com base na eficiência. Entrega segura, logística perfeita e correndo tranquila e baixos custos são críticos.</td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_6" name="6_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control atual atual_6" name="6_D_1" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                              <td width="10%">
-                                <input type="text" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_6" name="6_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
+                                <input type="number" maxlength="2" data-msg="Obrigatório"  required class="form-control preferida preferida_6" name="6_D_2" data-toggle="popover" data-trigger="hover" data-content="Insira um valor entre 10 e 50" data-placement="top"/>
                              </td>
                         </tr>
                          <tr>

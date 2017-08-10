@@ -100,12 +100,18 @@
 		
 	    $('#table_results').DataTable({
 	    	"language": {
-	            "lengthMenu": "Mostrando _MENU_ records por página",
+	            "lengthMenu": "Mostrando _MENU_ registros por página",
 	            "zeroRecords": "Nada encontrado",
-	            "info": "Monstrando _PAGE_ of _PAGES_",
+	            "info": "Mostrando _PAGE_ de _PAGES_",
 	            "infoEmpty": "Não há registros",
 	            "infoFiltered": "(filtered from _MAX_ total records)",
-	            "search": "Procurar:"
+	            "search": "Procurar:", 
+	            "paginate": {
+	                "first":      "Primeiro",
+	                "last":       "Último",
+	                "next":       "Próximo",
+	                "previous":   "Anterior"
+	            }
 	        }
 	    });
 		
@@ -113,11 +119,11 @@
 
 			var ids = Array();
 
-			table.rows({filter: 'applied'}).every( function ( rowIdx, tableLoop, rowLoop ) {
-				var data = this.data();
-				ids.push(data[0]);
-
-			} );
+			// table.rows({filter: 'applied'}).every( function ( rowIdx, tableLoop, rowLoop ) {
+			//      var data = this.data();
+			//      ids.push(data[0]);
+			     
+			//  } );
 
 			$.ajax({
 				type: 'POST',
