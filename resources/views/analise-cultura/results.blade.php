@@ -131,7 +131,7 @@
 				url: '{{ url('admin/verresultados_ids') }}', 
 				success: function (data) {
 					
-					data = JSON.parse(data);
+					// data = JSON.parse(data);
 
 					$('#content_table').html(data.html);
 

@@ -32,6 +32,8 @@ class TurmaController extends Controller
     public function store(Request $request) {
                 $turma = new turma; 
                 $turma->nome = Input::get('nome');
+                $turma->data_inicio = Input::get('data_inicio');
+                $turma->data_fim = Input::get('data_fim');
                 $turma->save();
                 return redirect('admin/turma');
             }

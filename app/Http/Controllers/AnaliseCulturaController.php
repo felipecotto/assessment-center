@@ -12,12 +12,22 @@ use App\Http\Controllers\Controller;
 
 use File;
 use Validator;
+use Carbon\Carbon; 
+use DateTime;
 
 class AnaliseCulturaController extends Controller
 {
+    // public function index()
+    // {
+    //     $turmas = turma::all();
+    //     return view('analise-cultura.create')->with('turmas', $turmas); 
+    // }
+
     public function index()
     {
-        $turmas = turma::all();
+        $now = new \DateTime();
+        // $turmas = turma::all();
+        $turmas = turma::whereDate('data_fim', '>=',  $now)->whereDate('data_inicio', '<=',  $now)->get();
         return view('analise-cultura.create')->with('turmas', $turmas); 
     }
 

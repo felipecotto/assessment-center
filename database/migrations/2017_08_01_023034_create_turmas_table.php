@@ -15,6 +15,8 @@ class CreateTurmasTable extends Migration
         Schema::create('turmas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->date('data_inicio');
+            $table->date('data_fim');
             $table->timestamps();
         });
     }

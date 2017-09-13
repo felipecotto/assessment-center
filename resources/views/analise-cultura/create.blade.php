@@ -23,10 +23,10 @@
                         <input type="text" class="form-control" data-msg="Informe o seu nome completo" required name="full_name" />
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <label>Turma</label>
+                        <label>Turma </label>
                         <select class="form-control" id="sel1" name="class">
                             @foreach($turmas as $turma)
-                                <option value="{{ $turma->nome }}">{{ $turma->nome }}</option>
+                                <option value="{{ $turma->nome }}">{{ $turma->nome }} </option>
                             @endforeach
                         </select>
                     </div>
