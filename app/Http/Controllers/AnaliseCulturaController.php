@@ -11,6 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use File;
+use Mail;
 use Validator;
 use Carbon\Carbon; 
 use DateTime;
@@ -88,7 +89,35 @@ class AnaliseCulturaController extends Controller
         $response->{'6_C_2'} = Input::get('6_C_2');
         $response->{'6_D_1'} = Input::get('6_D_1');
         $response->{'6_D_2'} = Input::get('6_D_2');
+        $response->hash = md5($response->id . date('YmdHis') . str_random(20));
         $response->save();
+
+        $this->sendEmail($response->email, $response->full_name, $response->hash);
+
+        return redirect('finalizada');
+    }
+
+    public function edit() {
+        return view('analise-cultura.edit');
+    }
+
+    public function sendEmail($email, $name, $hash)
+    {
+        $url = route('show.results', $hash);
+
+        Mail::send('emails.results', ['url' => $url, 'name' => $name], function ($m) use ($email, $name) {
+            $m->from('hello@app.com', 'Your Application');
+
+            $m->to($email, $name)->subject('Veja seu resultado!');
+        });
+
+    }
+
+    public function showResults($hash)
+    {
+        $response = Response::findByHash($hash);
+        if(is_null($response))
+            return 'Não foi encontrado.';
 
         $atual_a = $response->{'1_A_1'} + $response->{'2_A_1'} + $response->{'3_A_1'} + $response->{'4_A_1'} +
         $response->{'5_A_1'} + $response->{'6_A_1'};  
@@ -114,23 +143,17 @@ class AnaliseCulturaController extends Controller
         $preferida_d = $response->{'1_D_2'} + $response->{'2_D_2'} + $response->{'3_D_2'} + $response->{'4_D_2'} +
         $response->{'5_D_2'} + $response->{'6_D_2'};
         
-        return view('analise-cultura.results_final')
+        return view ('analise-cultura.results_final')
             ->with([
-                'response'=>$response, 
-                'atual_a'=>$atual_a, 
-                'atual_b'=>$atual_b, 
-                'atual_c'=>$atual_c, 
-                'atual_d'=>$atual_d,
-                'preferida_a'=>$preferida_a, 
-                'preferida_b'=>$preferida_b, 
-                'preferida_c'=>$preferida_c, 
-                'preferida_d'=>$preferida_d
-            ]); 
+                'response' => $response, 
+                'atual_a' => $atual_a, 
+                'atual_b' => $atual_b, 
+                'atual_c' => $atual_c, 
+                'atual_d' => $atual_d,
+                'preferida_a' => $preferida_a, 
+                'preferida_b' => $preferida_b, 
+                'preferida_c' => $preferida_c, 
+                'preferida_d' => $preferida_d
+        ]); 
     }
-
-    public function edit() {
-        return view('analise-cultura.edit');
-    }
-
-
 }

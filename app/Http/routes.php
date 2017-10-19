@@ -19,6 +19,7 @@ Route::get('instrumentos','SiteThumbController@index');
 Route::get('analise','AnaliseCulturaController@index');
 Route::post('nova-analise', 'AnaliseCulturaController@create');
 Route::post('nova-analise', 'AnaliseCulturaController@store');
+Route::get('ver-resultado/{hash}', ['as' => 'show.results' ,'uses' => 'AnaliseCulturaController@showResults']);
 
 
 Route::post('validar-user', 'ViewController@attemptLogin');
