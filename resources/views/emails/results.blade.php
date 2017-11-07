@@ -130,7 +130,7 @@
                         <table cellspacing="0" cellpadding="0" border="0" width="100%">
                           <tr>
                               <td style="padding: 40px; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
-                                  <img src="logott.png" alt="TecTrain" style="margin: 0 auto; display: block; width: 230px; " />
+                                  <img src="http://assessment-center.tecnologia.ws/img/logott.png" alt="TecTrain" style="margin: 0 auto; display: block; width: 230px; " />
                                   <br><br>        
                                   {{ $name }} , confira o resultado da <strong>Análise da Cultura Organizacional</strong> que você realizou.
                                   <br><br>
@@ -140,7 +140,7 @@
                                       <tr>
                                           <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td">
                                               <a href="{{ $url }}" style="background: #f49e42; border: 15px solid #f49e42; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff"> Ver resultado </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff"> Clique aqui para ver o resultado </span>&nbsp;&nbsp;&nbsp;&nbsp;
                                         </a>
                                           </td>
                                       </tr>
