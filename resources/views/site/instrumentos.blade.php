@@ -17,6 +17,16 @@
 			</div>
 		</div>
 		@endforeach
+		
+		<div class="col-md-3 d_inativo">
+			<div class="thumbnail thumbnail_height trans_3">
+				<div class="caption text-center trans_3">
+					<h3 class="m_b_25">Instrumento de Análise da Cultura Organizacional</h3>
+					<a href="{{ url('/analise') }}" class="btn_acessar" role="button">Visualizar</a>
+				</div>
+			</div>
+		</div>
+		
 	</div>	
 </div>
 @endsection

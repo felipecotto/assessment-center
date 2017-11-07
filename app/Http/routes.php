@@ -64,6 +64,15 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin' ], function () {
     Route::post('criar-turma', 'TurmaController@store');
     Route::get('deletar-turma/{id}','TurmaController@destroy');
 
+
+    Route::get('criar-acesso',function () {
+           return view('acesso.create');
+    });
+    Route::get('acesso', 'AcessoController@index'); 
+    Route::post('criar-acesso', 'AcessoController@create');
+    Route::post('criar-acesso', 'AcessoController@store');
+    Route::get('deletar-acesso/{id}','AcessoController@destroy');
+
     // $route['verresultados_ids'] = 'home/verresultados_ids';
     
     Route::get('register',function () {

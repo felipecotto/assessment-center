@@ -20,6 +20,7 @@
                         <th>Instrumento de Análise da Cultura Organizacional</th>
                         <th class="text-center">
                             <a href="{{ url('analise') }}" class="btn btn-success" role="button">Visualizar</a>
+                            <a href="{{ url('admin/acesso') }}" class="btn btn-info" role="button">Acesso</a>
                             <a href="{{ url('admin/turma') }}" class="btn btn-primary" role="button">Turmas</a>
                             <a href="{{ url('admin/respostas') }}" class="btn btn-warning" role="button">Respostas</a>
                             {{-- <a href="" class="btn btn-danger" role="button"  onclick="return confirm('Deseja realmente deletar o registro? ')">Deletar</a> --}}

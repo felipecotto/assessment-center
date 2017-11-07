@@ -24,8 +24,19 @@ class AnaliseCulturaController extends Controller
     //     return view('analise-cultura.create')->with('turmas', $turmas); 
     // }
 
+    public function attemptLogin()
+    {
+        $code = request()->get('acesso');
+        $auth = Acessos::whereAcesso($code)->firstOrFail();
+       
+       return view('post.show-post')->with('post',$auth);
+        // $posts = Posts::all();
+        // return view('post.index-post')->with('posts', $posts); 
+    }
+
     public function index()
     {
+
         $now = new \DateTime();
         // $turmas = turma::all();
         $turmas = turma::whereDate('data_fim', '>=',  $now)->whereDate('data_inicio', '<=',  $now)->get();
