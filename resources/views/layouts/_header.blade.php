@@ -20,8 +20,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @if (!Auth::guest())
-                    <li><a href="{{ route('usuario.index') }}">Usuários</a></li>
-                    <li><a href="{{ url('admin/criar-documento') }}">Novo Documento</a></li>
+                    @role('admin')
+                        <li><a href="{{ route('usuario.index') }}">Usuários</a></li>
+                        <li><a href="{{ url('admin/criar-documento') }}">Novo Documento</a></li>
+                    @endrole
                     <li><a href="{{ url('admin/lista-documento') }}">Listar Documentos</a></li>
                 @endif
             </ul>

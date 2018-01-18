@@ -71,6 +71,23 @@
 
                 </div>
 
+
+                <div style="clear: both; height: 25px;"></div>
+
+                <div class="form-group">
+
+                    <label for="password" class="col-sm-2 control-label">Perfil</label>
+
+                    <div class="col-sm-10">
+                        <select name="role_id" class="form-control" required>
+                            @foreach($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->display_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                </div>
+
                 <div style="clear: both; height: 25px;"></div>
 
                 <div class="form-group">

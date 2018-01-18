@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests;
 use App\User;
+use App\Role;
 use Alert; 
 
 class UserController extends Controller
@@ -23,15 +24,17 @@ class UserController extends Controller
     }
 
     public function create () {
-        return view("admin.usuario.inserir");
+        $roles = Role::orderBy('name', 'asc')->get();
+        return view("admin.usuario.inserir", compact('roles'));
     }
 
     public function store ( UserRequest $request ) {
-        User::create([
+        $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
         ]);
+        $user->roles()->attach($request['role_id']);
         return redirect()->route('usuario.index');
     }
 
@@ -45,13 +48,14 @@ class UserController extends Controller
         $usuario->name = $request->name; 
         $usuario->email = $request->email; 
         $usuario->password = bcrypt($request->password); 
-        // $usuario->remember_token = bcrypt($request->remember_token); 
         $usuario->save(); 
         return redirect()->route('usuario.index')->with('success', 'Editado com sucesso!');
     }
 
     public function delete ( $id ) {
-        User::find($id)->delete();
+        $user = User::find($id);
+        $user->roles()->attach();
+        $user->delete();
         return redirect()->route('usuario.index');
     }
 

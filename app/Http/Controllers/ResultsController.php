@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Response;
+use App\Turma;
 use Redirect;
 use App\Http\Requests; 
 use App\Http\Controllers\Controller;
 
+use Auth;
 use File;
 use Validator;
 
@@ -21,8 +23,15 @@ class ResultsController extends Controller
     
     public function index()
     {
-    $response = response::all();
-        return view('analise-cultura.results')->with('response', $response); 
+      $user = Auth::user();
+      if($user->hasRole('admin'))
+        $response = response::all();
+      else
+      {
+        $nomeTurmas = Turma::whereUserId($user->id)->lists('nome');
+        $response = response::whereIn('class', $nomeTurmas)->get();
+      }
+      return view('analise-cultura.results')->with('response', $response); 
     }
 
       public function verresultado($id)
@@ -60,8 +69,14 @@ class ResultsController extends Controller
 
         public function verresultados_ids()
         {
-            $responses = response::all(); 
-            $ids = 'ids';
+            $user = Auth::user();
+            if($user->hasRole('admin'))
+              $responses = response::all();
+            else
+            {
+              $nomeTurmas = Turma::whereUserId($user->id)->lists('nome');
+              $responses = response::whereIn('class', $nomeTurmas)->get();
+            }
 
             $atual_a = 0;
             $atual_b = 0;

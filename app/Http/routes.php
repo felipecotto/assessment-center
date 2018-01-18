@@ -40,56 +40,50 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin' ], function () {
     
     Route::auth();
 
-    Route::get('criar-documento',function () {
-           return view('post.create-post');
-    });
-
-    Route::post('criar-documento', 'PostController@create');
-    Route::post('criar-documento', 'PostController@store');
-    Route::get('lista-documento', 'PostController@index');
-    Route::get('editar-documento/{id}','PostController@edit');
-    Route::post('editar-documento/{id}','PostController@update');
-    Route::get('deletar-documento/{id}','PostController@destroy');
-
     Route::get('respostas', 'ResultsController@index');
     Route::get('verresultados/{id}', 'ResultsController@verresultado');
     Route::get('verresultados_ids', 'ResultsController@verresultados_ids'); 
     Route::post('verresultados_ids', 'ResultsController@verresultados_ids'); 
-    
-    Route::get('criar-turma',function () {
-           return view('turma.create');
-    });
-    Route::get('turma', 'TurmaController@index'); 
-    Route::post('criar-turma', 'TurmaController@create');
-    Route::post('criar-turma', 'TurmaController@store');
-    Route::get('deletar-turma/{id}','TurmaController@destroy');
 
-
-    Route::get('criar-acesso',function () {
-           return view('acesso.create');
-    });
     Route::get('acesso', 'AcessoController@index'); 
-    Route::post('criar-acesso', 'AcessoController@create');
+    Route::get('criar-acesso', 'AcessoController@create');
     Route::post('criar-acesso', 'AcessoController@store');
     Route::get('deletar-acesso/{id}','AcessoController@destroy');
 
-    // $route['verresultados_ids'] = 'home/verresultados_ids';
+    Route::get('turma', 'TurmaController@index'); 
+    Route::get('criar-turma', 'TurmaController@create');
+    Route::post('criar-turma', 'TurmaController@store');
     
     Route::get('register',function () {
-           return view('welcome');
+        return view('welcome');
     });
-    
-    Route::get('/home', [ 'uses' => 'HomeController@index', 'as' => 'dashboard']);
 
-    Route::group(['prefix'=> 'usuarios', 'where'=>['id'=>'[0-9]+'] ], function () {
-    
-        Route::get('', [ 'uses' => 'UserController@index', 'as' => 'usuario.index']);
-        Route::get('inserir', ['uses'=> 'UserController@create' , 'as' => 'usuario.create']);
-        Route::post('inserir', ['uses'=> 'UserController@store' , 'as' => 'usuario.store']);
-        Route::get('editar/{id}', ['uses'=> 'UserController@edit' , 'as' => 'usuario.edit']);
-        Route::put('editar/{id}', ['uses'=> 'UserController@update' , 'as' => 'usuario.update']);
-        Route::get('deletar/{id}', ['uses'=> 'UserController@delete' , 'as' => 'usuario.delete']);
-    
+    Route::get('lista-documento', 'PostController@index');
+
+    Route::group(['middleware' => ['role:admin']], function () {
+
+        Route::get('criar-documento', 'PostController@create');
+        Route::post('criar-documento', 'PostController@store');
+        Route::get('editar-documento/{id}','PostController@edit');
+        Route::post('editar-documento/{id}','PostController@update');
+        Route::get('deletar-documento/{id}','PostController@destroy');
+
+        
+        Route::get('deletar-turma/{id}','TurmaController@destroy');
+        
+        Route::get('/home', [ 'uses' => 'HomeController@index', 'as' => 'dashboard']);
+
+        Route::group(['prefix'=> 'usuarios', 'where'=>['id'=>'[0-9]+'] ], function () {
+        
+            Route::get('', [ 'uses' => 'UserController@index', 'as' => 'usuario.index']);
+            Route::get('inserir', ['uses'=> 'UserController@create' , 'as' => 'usuario.create']);
+            Route::post('inserir', ['uses'=> 'UserController@store' , 'as' => 'usuario.store']);
+            Route::get('editar/{id}', ['uses'=> 'UserController@edit' , 'as' => 'usuario.edit']);
+            Route::put('editar/{id}', ['uses'=> 'UserController@update' , 'as' => 'usuario.update']);
+            Route::get('deletar/{id}', ['uses'=> 'UserController@delete' , 'as' => 'usuario.delete']);
+        
+        });
+
     });
 
 });

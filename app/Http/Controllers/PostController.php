@@ -9,6 +9,7 @@ use Redirect;
 use App\Http\Requests; 
 use App\Http\Controllers\Controller;
 
+use Auth;
 use File;
 use Validator;
 
@@ -22,11 +23,12 @@ class PostController extends Controller
 
     public function index() {
         $posts = Posts::all();
+
         return view('post.index-post')->with('posts', $posts); 
     }
 
     public function create() {
-        return view('post.creat-post');
+        return view('post.create-post');
     }
 
     public function store(Request $request) {

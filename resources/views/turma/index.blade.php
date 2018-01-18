@@ -13,7 +13,10 @@
                         <th>Turmas</th>
                         <th class="text-center">Início</th>
                         <th class="text-center">Término</th>
-                        <th class="text-center">Ações</th>
+                        <th class="text-center">Responsável</th>
+                        @role('admin')
+                            <th class="text-center">Ações</th>
+                        @endrole
                     </tr>
                 </thead>
                 <tbody>
@@ -23,9 +26,12 @@
                         <th>{!! $value->nome !!}</th>
                         <th class="text-center">{!! date('d/m/Y', strtotime($value->data_inicio)) !!}</th>
                         <th class="text-center">{!! date('d/m/Y', strtotime($value->data_fim)) !!}</th>
-                        <th class="text-center">
-                            <a href="{!! url('admin/deletar-turma/'.$value->id) !!}" class="btn btn-danger" role="button"  onclick="return confirm('Deseja realmente deletar o registro? ')">Deletar</a>
-                        </th>
+                        <th class="text-center">{!! !empty($value->user_id) ? $value->user->name : 'N\A' !!}</th>
+                        @role('admin')
+                            <th class="text-center">
+                                <a href="{!! url('admin/deletar-turma/'.$value->id) !!}" class="btn btn-danger" role="button"  onclick="return confirm('Deseja realmente deletar o registro? ')">Deletar</a>
+                            </th>
+                        @endrole
                     </tr>
                 @endforeach
                 </tbody>
